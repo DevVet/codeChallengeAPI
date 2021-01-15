@@ -8,4 +8,3 @@ The purpose of this project is to provide users a RESTful API to query for code 
 - [ ] Language Agnostic
 - [ ] Publicly Accessible
 - [ ] Attribution to Question Author/Source
-- [ ] Rate Limited
