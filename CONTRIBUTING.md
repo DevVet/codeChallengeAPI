@@ -1,4 +1,4 @@
-# Contributing to Transcriptase
+# Contributing to DevVet Projects
 
 We love your input! We want to make contributing to this project as easy and transparent as possible, whether it's:
 
@@ -55,8 +55,9 @@ People _love_ thorough bug reports. I'm not even kidding.
 
 I'm again borrowing these from [Facebook's Guidelines](https://github.com/facebook/draft-js/blob/a9316a723f9e918afde44dea68b5f9f39b7d9b00/CONTRIBUTING.md)
 
-- 2 spaces for indentation rather than tabs
-- You can try running `npm run lint` for style unification
+- 4 spaces for indentation rather than tabs
+- Prettier is the defacto linter for JS Projects
+- pylint is the linter used for Python Projects
 
 ## License
 
