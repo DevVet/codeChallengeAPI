@@ -1,0 +1,11 @@
+{
+  "name": "codeChallenge",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Benjamin Winchester <benjamin.m.winchester@googlemail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.11.12"
+  }
+}
