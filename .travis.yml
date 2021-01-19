@@ -6,10 +6,10 @@ addons:
     packages:
       - libgconf-2-4
 cache:
-  npm: true
+  yarn: true
   directories:
     - ~/.cache
 install:
-  - yarn
+  - yarn install
 script:
   - $(yarn bin)/cypress run --parallel
