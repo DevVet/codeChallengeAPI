@@ -1,6 +1,7 @@
 const express = require("express");
 const testRoute = require("./test.route");
 const challengeRoute = require("./challenge.route");
+const docsRoute = require("./docs.route");
 
 const router = express.Router();
 
@@ -12,6 +13,10 @@ const defaultRoutes = [
   {
     path: "/challenge",
     route: challengeRoute,
+  },
+  {
+    path: "/docs",
+    route: docsRoute,
   },
 ];
 
