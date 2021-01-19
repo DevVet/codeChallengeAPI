@@ -1,11 +1,14 @@
 {
-  "name": "codeChallenge",
+  "name": "code-challenge",
   "version": "1.0.0",
   "main": "index.js",
   "author": "Benjamin Winchester <benjamin.m.winchester@googlemail.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon src/index.js"
+    "dev": "nodemon src/index.js",
+    "test": "yarn run test:jest && yarn run test:cypress",
+    "test:jest": "jest",
+    "test:cypress": "cypress run"
   },
   "dependencies": {
     "cors": "^2.8.5",
@@ -15,6 +18,9 @@
     "swagger-ui-express": "^4.1.6"
   },
   "devDependencies": {
-    "nodemon": "^2.0.7"
+    "nodemon": "^2.0.7",
+    "cypress": "^6.2.1",
+    "jest": "^26.6.3",
+    "supertest": "^6.1.1"
   }
 }
