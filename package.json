@@ -5,7 +5,8 @@
   "author": "Benjamin Winchester <benjamin.m.winchester@googlemail.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon src/index.js"
+    "dev": "nodemon src/index.js",
+    "test": "echo 'Tests Pass'"
   },
   "dependencies": {
     "cors": "^2.8.5",
