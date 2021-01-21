@@ -1,0 +1,26 @@
+components:
+  schemas:
+    Challenge:
+      type: object
+      required:
+        - id
+        - level
+        - question
+        - source
+      properties:
+        id:
+          type: integer
+          description: The auto-generated id of the challenge.
+        level:
+          type: integer
+          description: The difficulty rating of the challenge, with 1 being the easiset and 3 being the hardest.
+        question:
+          type: string
+          description: The challenge text.
+        source:
+          type: string
+          description: Who/where did the challenge originate.
+      example:
+        level: 2
+        question: Write a program that accepts a sentence and calculate the number of letters and digits.\\nSuppose the following input is supplied to the program:\\nhello world! 123\\nThen, the output should be:\\nLETTERS 10 DIGITS 3
+        source: none
