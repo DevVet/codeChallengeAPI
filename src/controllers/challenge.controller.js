@@ -2,12 +2,17 @@
 const data = require("../../ex.json");
 
 const getRandomChallenge = (req, res) => {
-  const question = data[Math.floor(Math.random() * data.length)];
-  res.send(question);
+  let options = [...data];
+  if (req.query.level) {
+    options = options.filter(
+      (question) => question.level === parseInt(req.query.level)
+    );
+  }
+  res.send(options[Math.floor(Math.random() * options.length)]);
 };
 
 const getChallengeById = (req, res) => {
-  const question = data.find((obj) => obj.id === req.params.id);
+  const question = data.find((obj) => obj.id === parseInt(req.params.id));
   res.send(question);
 };
 
