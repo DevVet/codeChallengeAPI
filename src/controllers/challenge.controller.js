@@ -2,13 +2,15 @@
 const data = require("../../ex.json");
 
 const getChallenge = (req, res) => {
-  let options = [...data];
+  let possibleQuestions = [...data];
   if (req.query.level) {
-    options = options.filter(
+    possibleQuestions = possibleQuestions.filter(
       (question) => question.level === parseInt(req.query.level)
     );
   }
-  res.send(options[Math.floor(Math.random() * options.length)]);
+  const randomQuestion =
+    possibleQuestions[Math.floor(Math.random() * possibleQuestions.length)];
+  res.send(randomQuestion);
 };
 
 module.exports = {
