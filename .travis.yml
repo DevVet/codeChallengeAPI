@@ -1,0 +1,15 @@
+language: node_js
+node_js:
+  - 14.15.4
+addons:
+  apt:
+    packages:
+      - libgconf-2-4
+cache:
+  yarn: true
+  directories:
+    - ~/.cache
+install:
+  - yarn install
+script:
+  - yarn run test
