@@ -2,7 +2,7 @@
   "name": "code-challenge",
   "version": "1.0.0",
   "main": "index.js",
-  "author": "Benjamin Winchester <benjamin.m.winchester@googlemail.com>",
+  "author": "DevVet Team",
   "license": "MIT",
   "scripts": {
     "dev": "nodemon src/index.js",
