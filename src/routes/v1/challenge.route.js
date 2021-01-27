@@ -2,13 +2,7 @@ const express = require("express");
 const router = express.Router();
 const challengeController = require("../../controllers/challenge.controller");
 
-router
-  .route("/")
-  .get((req, res) => challengeController.getRandomChallenge(req, res));
-
-router
-  .route("/:id")
-  .get((req, res) => challengeController.getChallengeById(req, res));
+router.route("/").get((req, res) => challengeController.getChallenge(req, res));
 
 module.exports = router;
 
@@ -16,29 +10,31 @@ module.exports = router;
  * @swagger
  * tags:
  *   name: Challenges
- *   description: Challenge Retreival
+ *   description: Challenge Retrieval
  */
 
 /**
  * @swagger
  * path:
- *  /challenge:
- *    get:
- *      summary: Get a random challenge
- *      description: Get a random challenge.
- *      tags: [Challenges]
- *      responses:
- *        "200":
- *          description: OK
- *          content:
- *            application/json:
- *              schema:
- *                type: object
- *                properties:
- *                  results:
- *                    type: object
- *                    items:
- *                      $ref: '#/components/schemas/Challenge'
+ *   /challenge:
+ *     get:
+ *       summary: Get a random challenge
+ *       description: Get a random challenge.
+ *       tags: [Challenges]
+ *       responses:
+ *         "200":
+ *           description: OK
+ *           content:
+ *             application/json:
+ *               schema:
+ *                 type: object
+ *                 properties:
+ *                   results:
+ *                     type: object
+ *                     items:
+ *                       $ref: '#/components/schemas/Challenge'
+ *         "400":
+ *           description: There was an Error processing the request
  */
 
 /**
@@ -63,4 +59,6 @@ module.exports = router;
  *            application/json:
  *              schema:
  *                 $ref: '#/components/schemas/Challenge'
+ *        "400":
+ *          description: The Challenge was not found
  */
