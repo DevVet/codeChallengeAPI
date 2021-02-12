@@ -5,6 +5,7 @@
     },
     "test": {
       "dialect": "sqlite",
+
       "logging": false,
       "storage": ":memory:"
     },
