@@ -6,7 +6,8 @@
   "license": "MIT",
   "scripts": {
     "dev": "NODE_ENV=development nodemon src/index.js",
-    "test": "yarn run test:jest",
+    "test": "NODE_ENV=test yarn run test:jest",
+    "db:seed": "sequelize db:seed:all",
     "test:jest": "jest"
   },
   "dependencies": {

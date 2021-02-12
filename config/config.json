@@ -1,12 +1,12 @@
 {
-  "dbConnections":{
     "development": {
       "dialect": "sqlite",
       "storage": "./database.sqlite3"
     },
     "test": {
       "dialect": "sqlite",
-      "storage": "./database.sqlite3"
+      "logging": false,
+      "storage": ":memory:"
     },
     "production": {
       "username": "code_challenge",
@@ -15,6 +15,4 @@
       "host": "TO.BE.DETERMINED",
       "dialect": "postgres"
     }
-  },
-  "port": 3000
 }

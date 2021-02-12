@@ -16,8 +16,8 @@ module.exports = {
       return queryInterface.bulkInsert('Questions', seedQuestions.map(question => (
         {
           ...question, 
-          createdAt: new Date().toDateString(),
-          updatedAt: new Date().toDateString()
+          createdAt: new Date(),
+          updatedAt: new Date()
         })),{})
   },
 

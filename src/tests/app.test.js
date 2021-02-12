@@ -2,6 +2,10 @@ const request = require("supertest");
 const app = require("../app");
 
 describe("GET Endpoints", () => {
+  beforeAll(async () => {
+    const db = require('../../models')
+    await db.sequelize.sync()
+  })
   it('should return "Hello World', async () => {
     const res = await request(app).get("/v1");
     expect(res.statusCode).toEqual(200);

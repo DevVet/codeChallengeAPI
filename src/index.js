@@ -4,8 +4,8 @@ const config = require('../config/config.json')
 
 // Connect with Database, then Run Application
 db.sequelize.sync().then(req => {
-  server = app.listen(config.port, () => {
-    console.log(`CodeChallengeAPI is running on port ${config.port}`)
+  server = app.listen(3000, () => {
+    console.log(`CodeChallengeAPI is running on port 3000`)
   });
 })
 
