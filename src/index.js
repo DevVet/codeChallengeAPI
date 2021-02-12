@@ -1,7 +1,15 @@
 const app = require("./app");
+const db = require('../models');
+const config = require('../config/config.json')
 
-server = app.listen(3000);
+// Connect with Database, then Run Application
+db.sequelize.sync().then(req => {
+  server = app.listen(config.port, () => {
+    console.log(`CodeChallengeAPI is running on port ${config.port}`)
+  });
+})
 
+//  Gracefully close server
 const exitHandler = () => {
   if (server) {
     server.close(() => {

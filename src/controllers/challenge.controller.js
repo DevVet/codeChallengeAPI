@@ -1,13 +1,23 @@
 // Mock repository
-const data = require("../../ex.json");
+const { Question } = require("../../models");
 
-const getRandomChallenge = (req, res) => {
-  const question = data[Math.floor(Math.random() * data.length)];
-  res.send(question);
+const getRandomChallenge = async (req, res) => {
+  const recordCount = await Question.count();
+  const randomId = Math.floor(Math.random() * recordCount)
+  const randomQuestion = await Question.findOne({
+    where: {
+      id: randomId
+    }
+  });
+  res.send(randomQuestion);
 };
 
-const getChallengeById = (req, res) => {
-  const question = data.find((obj) => obj.id === req.params.id);
+const getChallengeById = async (req, res) => {
+  const question = await Question.findOne({
+    where: {
+      id: req.params.id
+    }
+  });
   res.send(question);
 };
 
