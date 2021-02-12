@@ -5,3 +5,4 @@ npm-debug.log
 .DS_Store
 src/tests/reports
 cypress/videos
+*.sqlite3

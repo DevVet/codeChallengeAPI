@@ -1,7 +1,14 @@
 module.exports = {
   testEnvironment: 'node',
   coveragePathIgnorePatterns: [
-    '/node_modules/'
+    '/node_modules/',
+    '/seeders/',
+    '/models/'
+  ],
+  testPathIgnorePatterns: [
+    '/node_modules/',
+    '/seeders/',
+    '/models/'
   ],
   collectCoverage: true,
   coverageDirectory: 'src/tests/reports/coverage',
@@ -12,7 +19,7 @@ module.exports = {
     'text-summary',
   ],
   coverageThreshold: {
-    global: {
+    "./src/": {
       branches: 90,
       functions: 90,
       lines: 90,

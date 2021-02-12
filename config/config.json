@@ -1,0 +1,18 @@
+{
+    "development": {
+      "dialect": "sqlite",
+      "storage": "./database.sqlite3"
+    },
+    "test": {
+      "dialect": "sqlite",
+      "logging": false,
+      "storage": ":memory:"
+    },
+    "production": {
+      "username": "code_challenge",
+      "password": null,
+      "database": "code_challenge",
+      "host": "TO.BE.DETERMINED",
+      "dialect": "postgres"
+    }
+}
