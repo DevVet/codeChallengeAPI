@@ -6,7 +6,7 @@
     },
     "test": {
       "dialect": "sqlite",
-      "storage": "./database.sqlite3"
+      "storage": ":memory"
     },
     "production": {
       "username": "code_challenge",
