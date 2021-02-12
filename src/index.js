@@ -1,6 +1,7 @@
 const app = require("./app");
+const config = require("./config/config");
 
-server = app.listen(3000);
+server = app.listen(config.port);
 
 const exitHandler = () => {
   if (server) {
