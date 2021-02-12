@@ -1,15 +1,20 @@
-// Mock repository
 const { Question } = require("../../models");
 
-const getRandomChallenge = async (req, res) => {
-  const recordCount = await Question.count();
-  const randomId = Math.floor(Math.random() * recordCount)
-  const randomQuestion = await Question.findOne({
+const getChallenge = async (req, res) => {
+  let recordChoiceIds = await Question.findAll({
+    attributes: ['id'],
+    where: req.query.level ? { level: parseInt(req.query.level)} : {}
+  });
+  recordChoiceIds = recordChoiceIds.map(record => record.dataValues.id)
+
+  const randomId = recordChoiceIds[Math.floor(Math.random() * recordChoiceIds.length)]
+  
+  const chosenQuestion = await Question.findOne({
     where: {
       id: randomId
     }
   });
-  res.send(randomQuestion);
+  res.send(chosenQuestion);
 };
 
 const getChallengeById = async (req, res) => {
@@ -22,6 +27,6 @@ const getChallengeById = async (req, res) => {
 };
 
 module.exports = {
-  getRandomChallenge,
+  getChallenge,
   getChallengeById,
 };

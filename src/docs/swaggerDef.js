@@ -10,11 +10,11 @@ const swaggerDef = {
       url: "https://github.com/DevVet/codeChallengeAPI/blob/master/LICENSE",
     },
   },
-  servers: [
-    {
-      url: `http://localhost:3000/v1`,
-    },
-  ],
+  // servers: [
+  //   {
+  //     url: `http://localhost:3000/v1`,
+  //   },
+  // ],
 };
 
 module.exports = swaggerDef;
