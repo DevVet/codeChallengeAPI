@@ -2,6 +2,10 @@ const request = require("supertest");
 const app = require("../app");
 
 describe("GET Endpoints", () => {
+  beforeAll(async () => {
+    const db = require('../../models')
+    await db.sequelize.sync()
+  })
   it('should return "Hello World', async () => {
     const res = await request(app).get("/v1");
     expect(res.statusCode).toEqual(200);
@@ -28,6 +32,17 @@ describe("GET Endpoints", () => {
     expect(data).toHaveProperty("question");
     expect(data).toHaveProperty("source");
   });
+
+  it("should return challenge of given id", async () => {
+    const res = await request(app).get("/v1/challenge/2");
+    const data = JSON.parse(res.text);
+    expect(res.statusCode).toEqual(200);
+    expect(data.id).toEqual(2);
+    expect(data).toHaveProperty("level");
+    expect(data).toHaveProperty("question");
+    expect(data).toHaveProperty("source");
+  });
+
 });
 
 describe("DOCs Endpoints", () => {

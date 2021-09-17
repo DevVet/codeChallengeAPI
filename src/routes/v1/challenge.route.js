@@ -4,6 +4,8 @@ const challengeController = require("../../controllers/challenge.controller");
 
 router.route("/").get((req, res) => challengeController.getChallenge(req, res));
 
+router.route("/:id").get((req, res) => challengeController.getChallengeById(req, res));
+
 module.exports = router;
 
 /**

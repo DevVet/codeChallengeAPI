@@ -18,7 +18,11 @@ The purpose of this project is to provide users a RESTful API to query for code 
 
 - Clone repo: `git clone https://github.com/DevVet/codeChallengeAPI.git`
 - Enter repo: `cd codeChallengeAPI`
-- Install dependanies: `yarn`
+- Install dependanies: `yarn`,
+- Ensure using correct version of node `nvm use` //Requires nvm
+- Run development server to inistantiate SQLite database, then quit `yarn dev`
+> SQLite does not support `sequelize db:create`
+- Seed Development Database: `node_modules/.bin/sequelize db:seed:all`
 - Run development server: `yarn dev`
 
 ### Endpoints
